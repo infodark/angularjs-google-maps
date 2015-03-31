@@ -56,9 +56,11 @@ ngMap.MapController = function() {
     obj.map && obj.setMap(null);          
 
     /* delete from group */
-    var objs = obj.map[groupName];
-    for (var name in objs) {
-      objs[name] === obj && (delete objs[name]);
+    if(obj.map){
+      var objs = obj.map[groupName];
+      for (var name in objs) {
+        objs[name] === obj && (delete objs[name]);
+      }
     }
   };
 
